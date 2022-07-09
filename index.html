@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- FONTS -->
-    <!-- Cardo -->
+    <!-- Merriweather -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <!-- Kantumruy Pro -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,53 +47,83 @@
                         </figure>
                     </button>
                     <!-- Search Input -->
-                    <input type="text" id="search" placeholder="Search for...">
+                    <input type="text" id="search" name="inputWord" placeholder="Search for...">
                     <!-- Clear Button -->
                     <button id="clear_search">
                         <figure>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 50 50"><path d="M24 26.1 13.5 36.6q-.45.45-1.05.45-.6 0-1.05-.45-.45-.45-.45-1.05 0-.6.45-1.05L21.9 24 11.4 13.5q-.45-.45-.45-1.05 0-.6.45-1.05.45-.45 1.05-.45.6 0 1.05.45L24 21.9l10.5-10.5q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05L26.1 24l10.5 10.5q.45.45.45 1.05 0 .6-.45 1.05-.45.45-1.05.45-.6 0-1.05-.45Z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="-10 -10 70 70"><path d="M24 26.1 13.5 36.6q-.45.45-1.05.45-.6 0-1.05-.45-.45-.45-.45-1.05 0-.6.45-1.05L21.9 24 11.4 13.5q-.45-.45-.45-1.05 0-.6.45-1.05.45-.45 1.05-.45.6 0 1.05.45L24 21.9l10.5-10.5q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05L26.1 24l10.5 10.5q.45.45.45 1.05 0 .6-.45 1.05-.45.45-1.05.45-.6 0-1.05-.45Z"/></svg>
                         </figure>
                     </button>
                 </div>
             </section>
 
-            <!-- Searched Status -->
-            <section class="searched-status-section">
-                <!-- TODO: 
-                    searched_word_container = `<span id="searched_text">${document.getElementById("search").value}</span>`
-                    if word found
-                    ADD ID = "searched_error" or "searched_success" 
-                    h1.innerHTML = `Defining <br> "${searched_word_container}"`
-                
-                -->
-                <h1 id="searched_status"></h1>
             </section>
 
             <!-- Information Section -->
-            <section class="info-section-wrapper">
-                <!-- Section Definition and Similar -->
-                <section class="info-section">
-                    <!-- Definition Box - Definition, Pronunciation, Part of Speech, Example -->
-                    <div class="definition-box">
-                        <!-- Definition -->
-                        <h2 class="definition-head">Meaning
-                        </h2>
-                        <p id="definition">an object designed to resemble and serve as a substitute for the real or usual one.
-                        </p>
+            <section class="word-data-wrapper">
+                <!-- Status Displayer -->
+                <h1 id="status_box">
+                    <!-- For error - word-error -->
+                    <!-- <img src="images/illus-error.svg" alt="">
+                    <br> Sorry, couldn't find "<span id="searched_word">Dummy</span>". <br> Try searching a different word. -->
 
-                        <!-- Pronunciation -->
-                        <h2 class="pronunciation-head">Pronounced as</h2>
-                        <p id="pronunciation">/ˈdʌmi/</p>
+                    <!-- For success - word-success -->
+                    <!-- <span id="searched_word"></span> -->
+                </h1>
 
-                        <!-- Part of Speech -->
-                        <h2 class="part-of-speech-head">Part of Speech</h2>
-                        <p id="part_of_speech">noun</p>
+                <!-- Phonetic Section -->
+                <section class="phonetic-wrapper">
+                    <!-- Pronounce Button -->
+                    <!-- 
+                    <button id="pronounce_btn" class="phonetic-illus">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewbox="0 0 50 50"><path d="M14.25 36V12h3v24Zm8.25 8V4h3v40ZM6 28v-8h3v8Zm24.75 8V12h3v24ZM39 28v-8h3v8Z"/></svg>
+                    </button>
 
-                        <!-- Example -->
-                        <h2 class="example-head">Examples</h2>
-                        <!-- In Double Quotes -->
-                        <p id="example">"a waxwork dummy"</p>
+                    <p class="phonetic"> 
+                    </p> -->
+
+                </section>
+
+                <!-- Synonyms and Antonyms Wrapper -->
+                <section class="related-terms-section">
+                    <!-- similar words box -->
+                    <!-- If no similar words - no-similar -->
+                    <div class="similar-wrapper">
+                        <!-- 
+                       <h2>Similar</h2>
+                       <h3>${errorText}</h3>
+                       <div class="similar-box">${simiStr}</div>
+                        </div> -->
                     </div>
+
+                    <!-- opposite words box -->
+                    <!-- If no similar words - no-opposite -->
+                    <div class="opposite-wrapper">
+                        <!-- 
+                       <h2>Similar</h2>
+                       <h3>${errorText}</h3>
+                       <div class="similar-box">${simiStr}</div>
+                        </div> -->
+                    </div>
+                    </div>
+                </section>
+
+
+                <!-- Definitions Wrapper -->
+                <section class="definition-section">
+                    <!-- <h2>No Definitions</h2> -->
+                    <!-- Definition Wrapper -->
+                    <!-- <div class="definition-wrapper">
+                        <h3 class="part-of-speech">noun</h3>
+                        <ol class="definition-box">
+                            <li class="definition">
+                                a model or replica of a human being.
+                            </li>
+                            <li class="definition">
+                                an object designed to resemble and serve as a substitute for the real or usual one.
+                            </li>
+                        </ol>
+                    </div> -->
                 </section>
             </section>
         </main>

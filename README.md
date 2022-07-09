@@ -1,5 +1,5 @@
 # dictionary-api
-A Dictionary Website using an API from WordAPI
+A Dictionary Website using an API from Dictionary API
 
 **See the Dictionary Live - [https://vedantmali05.github.io/dictionary-api/](https://vedantmali05.github.io/dictionary-api/)**
 
@@ -8,8 +8,8 @@ A Dictionary Website using an API from WordAPI
 
 ![image](https://cdn.dribbble.com/users/581904/screenshots/10640423/media/b5ee996beffac603ddbe26488ec6aede.png)
 
-## WordAPI
+## Dictionary API
 
-WordAPI provides an API for every word we input in the search bar
+Dictionary API provides an API for every word we input in the search bar
 
-Here is the API Url - https://wordsapiv1.p.mashape.com/words/example which can be requested.
+Here is the API Url - https://api.dictionaryapi.dev/api/v2/entries/en/\<word> which can be requested.
