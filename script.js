@@ -57,6 +57,13 @@ getData = (word) => {
 
     searchStatusBox.innerHTML = "Searching..."
 
+    phoneticWrap.innerHTML = "";
+    similarWrap.className = `similar-wrapper`;
+    oppositeWrap.className = `opposite-wrapper`;
+    similarWrap.innerHTML = "";
+    oppositeWrap.innerHTML = "";
+    definitionWrap.innerHTML = "";
+
     // Fetch url
     fetch(url).then((response) => {
         // If responded 404 i.e. the word not found
@@ -196,14 +203,13 @@ getData = (word) => {
                     });
                     // Output - this.definition = [{partOfSpeech: string, definition: array}, {...}, {...}]
                     this.definitions = removeDup(this.definitions)
-                    console.log(this.definitions);
                 }
-
             }
             // class WordTerms ENDS
 
             // Create an object to to store all the data
             let obj = new WordTerms();
+            console.log(obj);
 
             phoneticWrap.innerHTML = `  <!-- Pronounce Button -->
             <button id="pronounce_btn" class="phonetic-illus">
@@ -291,7 +297,6 @@ getData = (word) => {
                 })
             }
 
-            return obj;
         }
     })
 }
@@ -299,5 +304,18 @@ getData = (word) => {
 
 searchBtn.addEventListener('click', () => {
     searchedWord = searchBox.value;
-    getData(searchedWord);
+    if (searchedWord != "") {
+        searchStatusBox.innerHTML = "Please enter something to search";
+        getData(searchedWord);
+    }
+})
+
+document.addEventListener('keypress', (e) => {
+    if (e.key === "Enter") {
+        searchedWord = searchBox.value;
+        if (searchedWord != "") {
+            searchStatusBox.innerHTML = "Please enter something to search";
+            getData(searchedWord);
+        }
+    }
 })

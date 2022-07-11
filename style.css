@@ -24,7 +24,7 @@
     --white: #f9f9fa;
     --text: #5e6368;
     --text-dark: #333638;
-    --noun-interjection: #cfecff;
+    --noun-interjection: #F0D9FF;
     --verb-preposition: #e5dbff;
     --adjective-conjuction: #fdf1db;
     --adverb-exclamation: #daf6f4;
@@ -147,10 +147,11 @@ button {
     height: auto;
 }
 
-.word-data-wrapper.word-error>* {
+.word-data-wrapper.word-error *:not(#status_box, #status_box *) {
     height: 0;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .word-data-wrapper.word-error :is(.similar-wrapper, .opposite-wrapper) {
@@ -307,7 +308,7 @@ button {
 
 .definition-wrapper .definition-box {
     margin: 1rem 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding-left: 3rem;
 }
 
